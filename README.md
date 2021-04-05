@@ -31,7 +31,7 @@ const store = createStore(todoReducer);
 
 ### 액션 생성
 
-- reducers/Todo.js
+-- reducers/Todo.js
 
 ```const TODO_INSERT = "TODO_INSERT"; //추가
 
@@ -70,6 +70,8 @@ export default function todoReducer(state = initState, { type, payload }) {
 ```
 
 ### 할 일 입력
+
+-- Components/TodoInput.jsx
 
 ```
 <AddButton onClick={addTodo}>추가</AddButton>
