@@ -33,7 +33,8 @@ const store = createStore(todoReducer);
 
 -- reducers/Todo.js
 
-```const TODO_INSERT = "TODO_INSERT"; //추가
+```
+const TODO_INSERT = "TODO_INSERT"; //추가
 
 ```
 
