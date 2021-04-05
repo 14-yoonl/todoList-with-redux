@@ -16,6 +16,7 @@
 - type과 payload
 
 4.  Reducer 함수는 action 함수가 반환한 type값에 맞는 Return값을 리턴
+5.  추가버튼을 누를 떄마다 실행되는 위의 과정으로 state에 저장된 list를 화면에 
 
 ## code flow
 
