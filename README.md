@@ -21,7 +21,7 @@
 
 ### 스토어 생성
 
-- index.js
+-- index.js
 
 ```
 const store = createStore(todoReducer);
