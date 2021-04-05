@@ -19,20 +19,72 @@
 
 ## code flow
 
+### 스토어 생성
+
+- index.js
+
+```
+const store = createStore(todoReducer);
+```
+
 - 할 일 추가
 
-# 액션 생성
+### 액션 생성
+
+- reducers/Todo.js
 
 ```const TODO_INSERT = "TODO_INSERT"; //추가
 
-   export const todoInsert = (id, text) => {
- return {
-   type: TODO_INSERT,
-   payload: {
-     id: id,
-     text: text,
-     isCompleted: false,
-   },
- };
+```
+
+### 액션 함수 정의
+
+```
+export const todoInsert = (id, text) => {
+  return {
+    type: TODO_INSERT,
+    payload: {
+      id: id,
+      text: text,
+      isCompleted: false,
+    },
+  };
 };
 ```
+
+### 리듀서
+
+```
+export default function todoReducer(state = initState, { type, payload }) {
+  switch (type) {
+    case TODO_INSERT:
+      return {
+        ...state,
+        todos: state.todos.concat({
+          id: payload.id,
+          text: payload.text,
+          isCompleted: false,
+        }),
+      };
+
+```
+
+### 할 일 입력
+
+```
+<AddButton onClick={addTodo}>추가</AddButton>
+```
+
+```
+const addTodo = () => {
+    if (todoInput.length === 0) {
+      alert("내용을 입력해 주세요");
+      return;
+    }
+    dispatch(todoInsert(nextId.current, todoInput));
+    nextId.current += 1;
+    onRemove();
+  };
+```
+
+
